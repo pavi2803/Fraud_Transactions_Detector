@@ -22,12 +22,14 @@ ZIP code fields (for both customer and merchant) were dropped, as each contained
 We applied pandas.get_dummies() to convert categorical features into binary indicator variables for model compatibility.
 
 ### Model Evaluation
-Model	Precision	Recall	False Positives (FP)	False Negatives (FN)
-Naive Bayes	0.1957	0.9993	2	11,695
-Logistic Regression	0.8887	0.7236	796	261
-Neural Network	0.8721	0.7624	684	322
-Decision Tree	0.9027	0.7212	803	224
-Random Forest	0.8845	0.7462	1,096	421
+
+| **Model**           | **Precision** | **Recall** | **False Positives (FP)** | **False Negatives (FN)** |
+| ------------------- | ------------- | ---------- | ------------------------ | ------------------------ |
+| Naive Bayes         | 0.1957        | 0.9993     | 2                        | 11,695                   |
+| Logistic Regression | 0.8887        | 0.7236     | 796                      | 261                      |
+| Neural Network      | 0.8721        | 0.7624     | 684                      | 322                      |
+| Decision Tree       | 0.9027        | 0.7212     | 803                      | 224                      |
+| Random Forest       | 0.8845        | 0.7462     | 1,096                    | 421                      |
 
 ### Insights & Conclusion
 While Naive Bayes yields the highest recall and lowest number of false positives, its precision is extremely low, meaning it flags many non-fraudulent transactions. Despite this, the cost of a false negative (missed fraud) is more severe than a false positive (an extra verification step), making its low FN rate valuable.
